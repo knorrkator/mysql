@@ -1,16 +1,39 @@
 tutum-docker-mysql
-==================
+=======================
 
 [![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
 
 Base docker image to run a MySQL database server
 
+Preamble
+--------
 
-MySQL version
+This repo is forked from https://github.com/tutumcloud/mysql
+Where Fernando Mayo <fernando@tutum.co> and Feng Honglin <hfeng@tutum.co> did a
+really fine job, my intension is to decrease the Dockerimages Fingerprint.
+
+When I build tutumcloud/mysql the Dockerimage has 471.8 MB. Where Ubuntu/Trusty occupies
+187.9 MB of it.
+
+So my idea is to use Alpine Linux (https://github.com/gliderlabs/docker-alpine)
+instead of Ubuntu.
+
+Alpines Fingerprint has about 5 MB. Compared to Ubuntu/Trusty this is a massive difference.
+
+When build this Docker image has only 132 MB which is 339,8 MB less.
+
+Advantages
+----------
+
+- Faster build runs
+- Less disk space is used on your hosts
+- Less RAM is used on your hosts
+- Dockerimage comes up a tick faster
+
+Disadvantages
 -------------
 
-Different versions are built from different folders. If you want to use MariaDB, please check our `tutum/mariadb` image: https://github.com/tutumcloud/tutum-docker-mariadb
-
+- In fact Alpines Linux MySQL 5.5 actually is a MariaDB 5.5.
 
 Usage
 -----

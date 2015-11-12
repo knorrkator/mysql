@@ -16,7 +16,7 @@ StartMySQL ()
     /usr/bin/mysqld_safe ${EXTRA_OPTS} > /dev/null 2>&1 &
     # Time out in 1 minute
     LOOP_LIMIT=60
-    for (( i=0 ; ; i++ )); do
+    for i in $(seq 0 ${LOOP_LIMIT}); do
         if [ ${i} -eq ${LOOP_LIMIT} ]; then
             echo "Time out. Error log is shown as below:"
             tail -n 100 ${LOG}

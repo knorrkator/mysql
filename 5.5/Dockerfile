@@ -38,4 +38,4 @@ ENV MYSQL_USER=admin \
 VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 EXPOSE 3306
-CMD ["/run.sh"]
+CMD ["/bin/sh", "/run.sh"]

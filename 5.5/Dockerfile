@@ -13,7 +13,7 @@ ADD my.cnf /etc/mysql/conf.d/my.cnf
 ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 
 # Install Mysql/Maria DB
-RUN apk --update add mysql && \
+RUN apk --update add mysql mysql-client && \
     rm -f /etc/mysql/my.cnf && \
     mysql_install_db > /dev/null 2>&1 && \
     touch /var/lib/mysql/.EMPTY_DB

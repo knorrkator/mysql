@@ -187,4 +187,4 @@ if [ -n "${REPLICATION_SLAVE}" ]; then
     fi
 fi
 
-fg
+wait

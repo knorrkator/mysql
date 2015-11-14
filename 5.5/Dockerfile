@@ -16,7 +16,10 @@ ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 RUN apk --update add mysql mysql-client && \
     rm -f /etc/mysql/my.cnf && \
     mysql_install_db > /dev/null 2>&1 && \
-    touch /var/lib/mysql/.EMPTY_DB
+    touch /var/lib/mysql/.EMPTY_DB && \
+    touch /var/log/mysql/error.log && \
+    chown mysql /var/log/mysql/error.log && \
+    chown -R mysql:mysql /var/lib/mysql
 
 # Install additional tools
 RUN apk --update add pwgen

@@ -13,7 +13,7 @@ chmod 644 /etc/mysql/conf.d/mysqld_charset.cnf
 
 StartMySQL ()
 {
-    /usr/bin/mysqld_safe ${EXTRA_OPTS} > /dev/null 2>&1 &
+    /usr/bin/mysqld_safe --defaults-extra-file=${CONF_FILE} ${EXTRA_OPTS} > /dev/null 2>&1 &
     # Time out in 1 minute
     LOOP_LIMIT=60
     for i in $(seq 0 ${LOOP_LIMIT}); do

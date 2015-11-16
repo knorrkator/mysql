@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -m
 set -e
 
 VOLUME_HOME="/var/lib/mysql"
